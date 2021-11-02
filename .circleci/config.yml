@@ -1,12 +1,17 @@
-version: 2
+version: 2.1
+
+orbs:
+  win: circleci/windows@2.2.0
+
 jobs:
   build:
     parallelism: 1
-    docker:
-      - image: cimg/base:edge-20.04
-    steps: 
-      - checkout 
-      - run: 
-          name: Run tests 
-          no_output_timeout: 5h 
-          command: chmod +x jobstate01.sh && ./jobstate01.sh
+    executor:
+      name: win/default
+      size: "large"
+      shell: powershell.exe
+    steps:
+      - checkout
+      - run:
+          shell: powershell.exe
+          command: .\jobstate01.bat
