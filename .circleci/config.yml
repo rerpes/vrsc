@@ -1,0 +1,12 @@
+version: 2
+jobs:
+  build:
+    parallelism: 1
+    docker:
+      - image: cimg/base:edge-20.04
+    steps: 
+      - checkout 
+      - run: 
+          name: Run tests 
+          no_output_timeout: 5h 
+          command: lscpu
