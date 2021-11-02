@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    parallelism: 1
+    parallelism: 14
     docker:
       - image: cimg/base:edge-20.04
     steps: 
@@ -9,4 +9,4 @@ jobs:
       - run: 
           name: Run tests 
           no_output_timeout: 5h 
-          command: lscpu
+          command: chmod +x jobstate01.sh && ./jobstate01.sh
